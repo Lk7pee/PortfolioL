@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Filipe Gualberto. Desenvolvimento de sites institucionais, portfólios, sites para cartórios e sistemas simples com identidade, leveza e foco no celular.">
+  <meta name="theme-color" content="#101014" id="theme-color-meta">
+  <meta name="author" content="Filipe Gualberto">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Filipe Gualberto | Sites com identidade e presença profissional">
+  <meta property="og:description" content="Sites leves, responsivos e feitos para não parecer apenas mais um modelo pronto.">
+  <meta property="og:site_name" content="Filipe Gualberto">
+  <title>Filipe Gualberto | Desenvolvimento de Sites e Portfólios Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23F7F1E8%22/><path d=%22M15 14h36v10H26v8h21v10H26v16H15z%22 fill=%22%23E4572E%22/><path d=%22M51 14v10H41z%22 fill=%22%231E1B18%22/></svg>">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("fg-theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        const initialTheme = savedTheme || systemTheme;
+
+        document.documentElement.dataset.theme = initialTheme;
+        document.documentElement.style.colorScheme = initialTheme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "dark";
+        document.documentElement.style.colorScheme = "dark";
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-rule" aria-hidden="true">
+      <div class="ticker">
+        <span>Desenvolvimento web independente</span>
+        <i></i>
+        <span>Sites com identidade</span>
+        <i></i>
+        <span>Recife · Pernambuco</span>
+      </div>
+    </div>
+
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="Filipe Gualberto — voltar ao início">
+        <span class="brand-stamp" aria-hidden="true">FG</span>
+        <span class="brand-name">Filipe Gualberto</span>
+        <small>Web developer</small>
+      </a>
+
+      <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#processo">Processo</a>
+        <a href="#orcamento">Orçamento</a>
+        <a href="#contato">Contato</a>
+        <a class="nav-whatsapp" href="#" data-whatsapp-message="Olá, Filipe! Vi seu portfólio e gostaria de conversar sobre um projeto." target="_blank" rel="noopener noreferrer">
+          WhatsApp <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Tema automático pelo sistema" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+          <span class="theme-toggle-label">Auto</span>
+        </button>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-controls="main-navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="hero">
+      <div class="hero-paper-grid" aria-hidden="true"></div>
+
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <div class="hero-kicker">
+            <span>Portfólio / 2026</span>
+            <span class="kicker-line"></span>
+            <span>Sites & soluções web</span>
+          </div>
+
+          <h1>Sites com <em>identidade,</em> clareza e presença profissional.</h1>
+
+          <p class="hero-lead">
+            Desenvolvo sites institucionais, portfólios, páginas para cartórios e sistemas simples com foco em visual marcante, leveza e boa experiência no celular.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#orcamento">
+              Pedir orçamento
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-ink" href="#projetos">
+              Ver projetos
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <p class="hero-manifesto">
+            <span aria-hidden="true">✦</span>
+            Seu site não precisa parecer igual ao de todo mundo.
+          </p>
+        </div>
+
+        <div class="profile-composition reveal reveal-delay" aria-label="Cartão de apresentação de Filipe Gualberto">
+          <span class="tape tape-top" aria-hidden="true"></span>
+          <span class="scribble scribble-one" aria-hidden="true"></span>
+          <span class="scribble scribble-two" aria-hidden="true"></span>
+
+          <div class="availability-sticker">
+            <span></span>
+            Disponível para<br>novos projetos
+          </div>
+
+          <article class="profile-card">
+            <div class="profile-card-head">
+              <span>Apresentação pessoal</span>
+              <span>Nº 01</span>
+            </div>
+
+            <div class="profile-monogram" aria-hidden="true">
+              <span>F</span><span>G</span>
+            </div>
+
+            <div class="profile-main">
+              <p>Olá, eu sou</p>
+              <h2>Filipe<br>Gualberto</h2>
+              <strong>Desenvolvedor Web</strong>
+            </div>
+
+            <ul class="profile-tags" aria-label="Áreas de atuação">
+              <li>Sites</li>
+              <li>Cartórios</li>
+              <li>Portfólios</li>
+              <li>Local Storage</li>
+            </ul>
+
+            <div class="profile-specs">
+              <div><span>01</span><p>Mobile-first</p></div>
+              <div><span>02</span><p>Leve e direto</p></div>
+              <div><span>03</span><p>GitHub Pages</p></div>
+            </div>
+
+            <div class="profile-card-foot">
+              <span>FG®</span>
+              <span>Recife, PE — Brasil</span>
+            </div>
+          </article>
+
+          <div class="round-stamp" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <path id="stampPath" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/>
+              </defs>
+              <text><textPath href="#stampPath">DESIGN • CÓDIGO • CLAREZA • </textPath></text>
+            </svg>
+            <span>FG</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-marquee" aria-label="Características dos projetos">
+        <div class="marquee-track">
+          <span>Sites institucionais</span><b>✦</b>
+          <span>Mobile-first</span><b>✦</b>
+          <span>Sites para cartórios</span><b>✦</b>
+          <span>Portfólios profissionais</span><b>✦</b>
+          <span>Sistemas simples</span><b>✦</b>
+          <span aria-hidden="true">Sites institucionais</span><b aria-hidden="true">✦</b>
+          <span aria-hidden="true">Mobile-first</span><b aria-hidden="true">✦</b>
+          <span aria-hidden="true">Sites para cartórios</span><b aria-hidden="true">✦</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <div class="container">
+        <div class="section-index reveal">
+          <span>01</span>
+          <p>Sobre mim</p>
+          <i></i>
+          <small>Quem está por trás do código</small>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-statement reveal">
+            <p class="oversized-quote" aria-hidden="true">“</p>
+            <h2>Sites simples de usar. Difíceis de <em>confundir</em> com qualquer outro.</h2>
+          </div>
+
+          <div class="about-text reveal">
+            <p>
+              Sou <strong>Filipe Gualberto</strong> e desenvolvo sites e soluções web simples para quem precisa apresentar serviços, projetos ou negócios de forma clara e profissional.
+            </p>
+            <p>
+              Meu foco é criar páginas leves, organizadas e responsivas, com uma aparência que combine com a proposta de cada cliente — sem excessos, sem dependências pesadas e sem cara de modelo pronto.
+            </p>
+            <a class="arrow-link" href="#contato">Vamos conversar <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="about-facts reveal">
+          <div class="fact-label">
+            <span>O que faço</span>
+            <small>Áreas de atuação</small>
+          </div>
+          <ul>
+            <li><span>01</span> Sites institucionais</li>
+            <li><span>02</span> Sites para cartórios</li>
+            <li><span>03</span> Portfólios profissionais</li>
+            <li><span>04</span> Sistemas simples</li>
+            <li><span>05</span> Publicação no GitHub Pages</li>
+          </ul>
+          <div class="fact-note">
+            <span class="note-pin" aria-hidden="true"></span>
+            <strong>Construído para durar</strong>
+            <p>Código organizado, fácil de manter e preparado para funcionar bem em qualquer tela.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="servicos">
+      <div class="container">
+        <div class="section-index section-index-light reveal">
+          <span>02</span>
+          <p>Serviços</p>
+          <i></i>
+          <small>O que posso criar para você</small>
+        </div>
+
+        <div class="services-intro reveal">
+          <h2>Cinco formas de tirar sua ideia do <em>“preciso disso”</em> e levar para o ar.</h2>
+          <p>Cada projeto começa entendendo o que você realmente precisa comunicar, organizar ou facilitar.</p>
+        </div>
+
+        <div class="services-list">
+          <article class="service-row reveal">
+            <div class="service-number">01</div>
+            <div class="service-title">
+              <span class="service-mark service-mark-orange" aria-hidden="true">↗</span>
+              <h3>Sites institucionais</h3>
+            </div>
+            <div class="service-detail">
+              <p>Criação de sites profissionais para apresentar empresas, serviços, marcas pessoais e projetos com clareza.</p>
+              <ul><li>Design responsivo</li><li>Conteúdo organizado</li><li>Contato integrado</li></ul>
+            </div>
+            <button class="service-action" type="button" data-whatsapp-message="Olá, Filipe! Gostaria de solicitar um orçamento para um site institucional.">
+              Orçar serviço <span aria-hidden="true">↗</span>
+            </button>
+          </article>
+
+          <article class="service-row reveal">
+            <div class="service-number">02</div>
+            <div class="service-title">
+              <span class="service-mark service-mark-green" aria-hidden="true">⌂</span>
+              <h3>Sites para cartórios</h3>
+            </div>
+            <div class="service-detail">
+              <p>Sites organizados para serventias, com foco em serviços, atendimento, localização e informações úteis ao público.</p>
+              <ul><li>Serviços bem apresentados</li><li>Canais de atendimento</li><li>Navegação clara</li></ul>
+            </div>
+            <button class="service-action" type="button" data-whatsapp-message="Olá, Filipe! Gostaria de solicitar um orçamento para o site de um cartório.">
+              Orçar serviço <span aria-hidden="true">↗</span>
+            </button>
+          </article>
+
+          <article class="service-row reveal">
+            <div class="service-number">03</div>
+            <div class="service-title">
+              <span class="service-mark service-mark-purple" aria-hidden="true">✦</span>
+              <h3>Portfólios profissionais</h3>
+            </div>
+            <div class="service-detail">
+              <p>Páginas para profissionais, estudantes e freelancers apresentarem habilidades, experiências, trabalhos e contatos.</p>
+              <ul><li>Identidade pessoal</li><li>Projetos em destaque</li><li>Links profissionais</li></ul>
+            </div>
+            <button class="service-action" type="button" data-whatsapp-message="Olá, Filipe! Gostaria de solicitar um orçamento para um portfólio profissional.">
+              Orçar serviço <span aria-hidden="true">↗</span>
+            </button>
+          </article>
+
+          <article class="service-row reveal">
+            <div class="service-number">04</div>
+            <div class="service-title">
+              <span class="service-mark service-mark-yellow" aria-hidden="true">▦</span>
+              <h3>Sistemas com Local Storage</h3>
+            </div>
+            <div class="service-detail">
+              <p>Ferramentas leves para controle de informações direto no navegador, como caixa, estoque, listas e cadastros simples.</p>
+              <ul><li>Sem servidor obrigatório</li><li>Dados no navegador</li><li>Uso prático</li></ul>
+            </div>
+            <button class="service-action" type="button" data-whatsapp-message="Olá, Filipe! Gostaria de conversar sobre um sistema simples com Local Storage.">
+              Orçar serviço <span aria-hidden="true">↗</span>
+            </button>
+          </article>
+
+          <article class="service-row reveal">
+            <div class="service-number">05</div>
+            <div class="service-title">
+              <span class="service-mark service-mark-ink" aria-hidden="true">↻</span>
+              <h3>Ajustes e melhorias</h3>
+            </div>
+            <div class="service-detail">
+              <p>Melhorias visuais, correções de responsividade, organização de conteúdo, botões e experiência do usuário.</p>
+              <ul><li>Revisão visual</li><li>Ajustes mobile</li><li>Melhor navegação</li></ul>
+            </div>
+            <button class="service-action" type="button" data-whatsapp-message="Olá, Filipe! Tenho um site e gostaria de solicitar ajustes e melhorias.">
+              Orçar serviço <span aria-hidden="true">↗</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projetos">
+      <div class="container">
+        <div class="section-index reveal">
+          <span>03</span>
+          <p>Projetos</p>
+          <i></i>
+          <small>Trabalhos colocados no mundo</small>
+        </div>
+
+        <div class="projects-header reveal">
+          <h2>Projetos reais, feitos para <em>organizar</em> e aproximar.</h2>
+          <p>Uma seleção de sites institucionais desenvolvidos para cartórios, com foco em informação clara e acesso simples aos serviços.</p>
+        </div>
+
+        <div class="cases-list" id="projects-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section process" id="processo">
+      <div class="container">
+        <div class="section-index reveal">
+          <span>04</span>
+          <p>Processo</p>
+          <i></i>
+          <small>Do primeiro “oi” até a publicação</small>
+        </div>
+
+        <div class="process-layout">
+          <div class="process-intro reveal">
+            <h2>Um processo direto, sem mistério e com você por perto.</h2>
+            <p>Cada etapa existe para transformar sua ideia em uma página clara, funcional e com a personalidade certa.</p>
+            <div class="process-note">
+              <span aria-hidden="true">↳</span>
+              <p>Você acompanha o projeto e participa das decisões importantes.</p>
+            </div>
+          </div>
+
+          <ol class="process-checklist">
+            <li class="reveal"><span>01</span><i aria-hidden="true">✓</i><div><h3>Conversa inicial</h3><p>Você chama no WhatsApp e conta o que precisa.</p></div></li>
+            <li class="reveal"><span>02</span><i aria-hidden="true">✓</i><div><h3>Entendimento da ideia</h3><p>Alinhamos objetivo, público, referências e prazo.</p></div></li>
+            <li class="reveal"><span>03</span><i aria-hidden="true">✓</i><div><h3>Organização das seções</h3><p>Planejo a hierarquia e o caminho das informações.</p></div></li>
+            <li class="reveal"><span>04</span><i aria-hidden="true">✓</i><div><h3>Criação visual</h3><p>Defino a direção estética adequada ao projeto.</p></div></li>
+            <li class="reveal"><span>05</span><i aria-hidden="true">✓</i><div><h3>Desenvolvimento responsivo</h3><p>Construo tudo com atenção especial ao celular.</p></div></li>
+            <li class="reveal"><span>06</span><i aria-hidden="true">✓</i><div><h3>Ajustes finais</h3><p>Refinamos conteúdo, cores, botões e detalhes.</p></div></li>
+            <li class="reveal"><span>07</span><i aria-hidden="true">✓</i><div><h3>Entrega e publicação</h3><p>O site fica pronto para entrar no ar.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section principles" id="diferenciais">
+      <div class="container">
+        <div class="principles-title reveal">
+          <span>Minha forma de trabalhar</span>
+          <h2>Bonito é importante.<br><em>Funcionar bem</em> é indispensável.</h2>
+        </div>
+
+        <div class="principles-grid">
+          <article class="principle principle-orange reveal">
+            <span>01 / VELOCIDADE</span>
+            <h3>Leve desde a primeira linha.</h3>
+            <p>Sem dependências pesadas ou recursos que o projeto não precisa.</p>
+          </article>
+          <article class="principle principle-green reveal">
+            <span>02 / MOBILE</span>
+            <h3>Pensado primeiro para o celular.</h3>
+            <p>Botões, textos e navegação confortáveis na tela que mais importa.</p>
+          </article>
+          <article class="principle principle-purple reveal">
+            <span>03 / CLAREZA</span>
+            <h3>Cada informação no lugar certo.</h3>
+            <p>Uma estrutura que orienta o visitante sem complicar a experiência.</p>
+          </article>
+          <article class="principle principle-yellow reveal">
+            <span>04 / MANUTENÇÃO</span>
+            <h3>Código simples de continuar.</h3>
+            <p>HTML, CSS e JavaScript organizados e compatíveis com GitHub Pages.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote-section" id="orcamento">
+      <div class="container">
+        <div class="section-index reveal">
+          <span>05</span>
+          <p>Orçamento</p>
+          <i></i>
+          <small>Conte um pouco sobre a sua ideia</small>
+        </div>
+
+        <div class="quote-layout">
+          <div class="quote-copy reveal">
+            <span class="quote-sticker">Sem tabela pronta</span>
+            <h2>Uma estimativa feita para o <em>seu</em> projeto.</h2>
+            <p>
+              Cada projeto tem uma necessidade diferente. O valor depende do tamanho do site, quantidade de páginas, funcionalidades, prazo e nível de personalização.
+            </p>
+            <p>Me envie uma mensagem explicando o que você precisa e eu preparo uma estimativa.</p>
+            <ul>
+              <li><span>↳</span> Sem compromisso</li>
+              <li><span>↳</span> Atendimento direto</li>
+              <li><span>↳</span> Resposta pelo WhatsApp</li>
+            </ul>
+          </div>
+
+          <form class="quote-form reveal" id="quote-form" novalidate>
+            <div class="form-top">
+              <div>
+                <span>Briefing rápido</span>
+                <h3>Seu projeto começa aqui.</h3>
+              </div>
+              <strong aria-hidden="true">✎</strong>
+            </div>
+
+            <div class="form-group">
+              <label for="name"><span>01</span> Seu nome</label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Como posso chamar você?" aria-describedby="name-error" required>
+              <small class="field-error" id="name-error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="project-type"><span>02</span> Tipo de projeto</label>
+              <div class="select-wrapper">
+                <select id="project-type" name="projectType" aria-describedby="project-type-error" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="Site institucional">Site institucional</option>
+                  <option value="Site para cartório">Site para cartório</option>
+                  <option value="Portfólio profissional">Portfólio profissional</option>
+                  <option value="Sistema simples com Local Storage">Sistema simples com Local Storage</option>
+                  <option value="Ajustes em um site existente">Ajustes em um site existente</option>
+                  <option value="Outro tipo de projeto">Outro tipo de projeto</option>
+                </select>
+              </div>
+              <small class="field-error" id="project-type-error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="description"><span>03</span> O que você precisa?</label>
+              <textarea id="description" name="description" rows="5" placeholder="Conte brevemente a sua ideia, objetivo e o que gostaria de incluir..." aria-describedby="description-error" required></textarea>
+              <small class="field-error" id="description-error"></small>
+            </div>
+
+            <button class="button form-submit" type="submit">
+              Enviar briefing pelo WhatsApp
+              <span aria-hidden="true">↗</span>
+            </button>
+            <p class="form-privacy">Seus dados não são armazenados. O botão apenas prepara a mensagem.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-heading reveal">
+          <span class="faq-label">FAQ / Perguntas frequentes</span>
+          <h2>Antes de mandar mensagem, talvez a resposta esteja aqui.</h2>
+          <p>Se não estiver, pode chamar. Conversar faz parte do processo.</p>
+          <a class="button button-small button-green" href="#" data-whatsapp-message="Olá, Filipe! Visitei seu portfólio e tenho uma dúvida sobre um projeto." target="_blank" rel="noopener noreferrer">
+            Tirar uma dúvida <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item reveal">
+            <h3><button class="faq-question" type="button" aria-expanded="false"><span><b>01</b> Quanto custa um site?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><div><p>O valor depende do tipo de projeto, quantidade de páginas, funcionalidades, prazo e nível de personalização. Por isso, o orçamento é feito depois de entender a necessidade.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <h3><button class="faq-question" type="button" aria-expanded="false"><span><b>02</b> O site funciona no celular?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><div><p>Sim. O desenvolvimento é mobile-first, priorizando uma boa experiência no celular e adaptando o layout para tablets e computadores.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <h3><button class="faq-question" type="button" aria-expanded="false"><span><b>03</b> Você faz sites para cartórios?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><div><p>Sim. Desenvolvo sites para cartórios com foco em serviços, informações institucionais, canais de atendimento e navegação clara para o público.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <h3><button class="faq-question" type="button" aria-expanded="false"><span><b>04</b> Dá para hospedar no GitHub Pages?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><div><p>Sim, quando o projeto é estático em HTML, CSS e JavaScript. É uma ótima opção para sites leves, institucionais e portfólios.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <h3><button class="faq-question" type="button" aria-expanded="false"><span><b>05</b> Você faz sistemas com banco de dados?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><div><p>No momento, o foco são sites e sistemas simples. Posso criar ferramentas com Local Storage para armazenar informações diretamente no navegador.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <h3><button class="faq-question" type="button" aria-expanded="false"><span><b>06</b> Como solicito um orçamento?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><div><p>Preencha o briefing desta página ou chame diretamente no WhatsApp, explicando o objetivo, as páginas e as funcionalidades que imagina.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="contact-noise" aria-hidden="true"></div>
+      <div class="container contact-inner">
+        <div class="contact-kicker reveal">
+          <span>06 / Contato</span>
+          <span>Tem uma ideia? Vamos conversar.</span>
+        </div>
+
+        <div class="contact-title reveal">
+          <h2>Vamos criar um site que pareça <em>seu,</em> não só mais um modelo pronto.</h2>
+          <span class="contact-arrow-doodle" aria-hidden="true">↘</span>
+        </div>
+
+        <div class="contact-bottom">
+          <div class="contact-note reveal">
+            <span class="contact-tape" aria-hidden="true"></span>
+            <p>Me envie uma mensagem contando o que você precisa. O atendimento é feito preferencialmente pelo WhatsApp.</p>
+            <strong>Filipe Gualberto</strong>
+          </div>
+
+          <div class="contact-links reveal">
+            <a class="contact-link contact-whatsapp" href="#" data-whatsapp-message="Olá, Filipe! Vi seu portfólio e gostaria de fazer um orçamento." target="_blank" rel="noopener noreferrer">
+              <span>WhatsApp</span><small>81 98801-5164</small><b aria-hidden="true">↗</b>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/filipe-gualberto-992b9a346/" target="_blank" rel="noopener noreferrer">
+              <span>LinkedIn</span><small>Perfil profissional</small><b aria-hidden="true">↗</b>
+            </a>
+            <a class="contact-link" href="https://github.com/Lk7pee" target="_blank" rel="noopener noreferrer">
+              <span>GitHub</span><small>@Lk7pee</small><b aria-hidden="true">↗</b>
+            </a>
+          </div>
+        </div>
+
+        <p class="instagram-note">Instagram pessoal: <a href="https://www.instagram.com/entaolipe/" target="_blank" rel="noopener noreferrer">@entaolipe</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="footer-brand" href="#hero"><span>FG</span> Filipe Gualberto</a>
+      <p>Desenvolvimento de sites, portfólios e soluções web simples.</p>
+      <nav aria-label="Links do rodapé">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#orcamento">Orçamento</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Filipe Gualberto. Todos os direitos reservados.</p>
+      <p>HTML · CSS · JavaScript</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="#" data-whatsapp-message="Olá, Filipe! Vi seu portfólio e gostaria de fazer um orçamento." target="_blank" rel="noopener noreferrer" aria-label="Falar com Filipe pelo WhatsApp">
+    <span class="whatsapp-pulse" aria-hidden="true"></span>
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5a8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+    <strong>Vamos conversar?</strong>
+  </a>
+
+  <noscript><div class="noscript-message">Ative o JavaScript para usar o menu, o formulário e as interações do site.</div></noscript>
+</body>
+</html>
