@@ -1,10 +1,9 @@
-Pasta reservada para imagens, ícones ou outros arquivos opcionais do portfólio.
+Imagens e identidade do portfólio.
 
-O site atual não depende de imagens externas para funcionar.
-Todos os elementos visuais principais foram criados com HTML, CSS e SVG inline.
+favicon.svg: ícone vetorial local.
+social-card.svg: fonte editável da arte de compartilhamento.
+social-card.png: exportação PNG 1200 × 630 usada nos metadados Open Graph.
+projects/: capturas reais dos quatro sites, em WebP 1200 × 800.
 
-Caso adicione imagens no futuro:
-- Prefira os formatos WebP ou AVIF.
-- Comprima os arquivos antes de publicar.
-- Use nomes descritivos em letras minúsculas e sem espaços.
-- Inclua sempre um texto alternativo (alt) adequado no HTML.
+Consulte projects/README.md para a origem das capturas e o README.md da raiz
+para atualizar imagens e sincronizar os cartões sem JavaScript.

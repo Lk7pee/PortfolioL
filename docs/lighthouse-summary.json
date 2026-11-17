@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-17",
+  "lighthouseVersion": "13.6.0",
+  "environment": "Local HTTP server /PortfolioL/, mobile simulated throttling",
+  "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "value": 1143.06,
+      "unit": "millisecond",
+      "display": "1.1 s"
+    },
+    "largest-contentful-paint": {
+      "value": 1368.06,
+      "unit": "millisecond",
+      "display": "1.4 s"
+    },
+    "total-blocking-time": {
+      "value": 20.5,
+      "unit": "millisecond",
+      "display": "20 ms"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "unit": "unitless",
+      "display": "0"
+    },
+    "speed-index": {
+      "value": 1143.06,
+      "unit": "millisecond",
+      "display": "1.1 s"
+    }
+  },
+  "labelContentNameMismatch": 1,
+  "warnings": []
+}

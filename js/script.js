@@ -7,409 +7,195 @@ const portfolioData = {
   instagram: "https://www.instagram.com/entaolipe/"
 };
 
-const themeConfig = {
-  storageKey: "fg-theme",
-  colors: {
-    dark: "#101014",
-    light: "#F7F1E8"
-  },
-  labels: {
-    dark: {
-      icon: "☾",
-      text: "Escuro",
-      aria: "Tema escuro ativo. Alternar para tema claro."
-    },
-    light: {
-      icon: "☀",
-      text: "Claro",
-      aria: "Tema claro ativo. Alternar para tema escuro."
-    }
-  }
-};
-
+// Fonte única dos cartões. Após editar, execute: node tools/sync-projects.cjs
 const projects = [
   {
-    title: "Cartório Registral Abreu e Lima",
-    category: "Site para Cartório Registral RI - RTD - RCPJ",
+    title: "Cartório Registral de Abreu e Lima",
+    category: "Registro de Imóveis, RTD e RCPJ",
+    description: "Site institucional que organiza os serviços registrais e facilita o acesso às informações e aos canais de atendimento.",
     url: "https://cartorioregistralabreuelima.com/",
-    description: "Site profissional voltado para apresentar a instituição, os serviços registrais e os principais canais de atendimento ao público.",
-    objective: "Organizar informações institucionais e facilitar o acesso do público aos canais e serviços do cartório.",
-    color: "#E4572E",
-    number: "01",
-    symbol: "A"
+    image: "assets/projects/registral-abreu-lima.webp",
+    imageAlt: "Página inicial da Serventia Registral de Abreu e Lima, com serviços e canais de atendimento.",
+    color: "#e3e8e5"
   },
   {
-    title: "13º RCPN de Recife - PE",
-    subtitle: "Cartório do Arruda",
-    category: "Site para Cartório de Registro Civil",
+    title: "Cartório do Arruda",
+    category: "Registro Civil das Pessoas Naturais",
+    description: "Site institucional com navegação acessível, serviços organizados e informações úteis para o atendimento ao cidadão.",
     url: "https://www.cartoriodoarruda.com.br/",
-    description: "Projeto focado em navegação simples, informações bem distribuídas e acesso rápido aos serviços e orientações da serventia.",
-    objective: "Criar um ponto de referência digital claro para quem procura informações e atendimento do cartório.",
-    color: "#2E7D6B",
-    number: "02",
-    symbol: "R"
+    image: "assets/projects/cartorio-arruda.webp",
+    imageAlt: "Página inicial do Cartório do Arruda, com apresentação do Registro Civil e identidade em tons terrosos.",
+    color: "#e5e8dc"
   },
   {
     title: "Cartório RCPN São José do Belmonte",
-    category: "Site para Cartório de Registro Civil",
+    category: "Registro Civil das Pessoas Naturais",
+    description: "Site responsivo desenvolvido para apresentar os serviços e facilitar o acesso às orientações e ao atendimento.",
     url: "https://cartoriosjbelmontepe.com/",
-    description: "Site responsivo criado para reunir informações institucionais, contatos, serviços e orientações úteis em uma estrutura acessível.",
-    objective: "Aproximar o cartório do público por meio de uma página leve, organizada e confortável de acessar pelo celular.",
-    color: "#7C3AED",
-    number: "03",
-    symbol: "B"
+    image: "assets/projects/sao-jose-belmonte.webp",
+    imageAlt: "Página inicial do Cartório Silva de São José do Belmonte, com apresentação e acessos aos serviços.",
+    color: "#e6e1db"
+  },
+  {
+    title: "Cartório RCPN de Abreu e Lima",
+    category: "Registro Civil das Pessoas Naturais — RCPN",
+    description: "Site institucional desenvolvido para facilitar o acesso aos serviços, orientações e canais de atendimento do Registro Civil de Abreu e Lima/PE.",
+    url: "https://registrocivilabreuelima.com/",
+    image: "assets/projects/rcpn-abreu-lima.webp",
+    imageAlt: "Página inicial do RCPN de Abreu e Lima, com serviços de registro civil e canais de atendimento.",
+    color: "#e0e5e9"
   }
 ];
 
 const createWhatsAppUrl = (message) =>
   `https://wa.me/${portfolioData.whatsapp}?text=${encodeURIComponent(message)}`;
 
-const getSystemTheme = () =>
-  window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+})[character]);
 
-const getSavedTheme = () => {
-  try {
-    const savedTheme = localStorage.getItem(themeConfig.storageKey);
-    return savedTheme === "light" || savedTheme === "dark" ? savedTheme : null;
-  } catch (error) {
-    return null;
-  }
-};
+// A mesma função gera o HTML estático e a apresentação no navegador.
+const renderProjectsMarkup = () => projects.map((project) => {
+  const message = `Olá, Filipe! Vi o projeto ${project.title} no seu portfólio e gostaria de solicitar algo parecido.`;
+  const title = escapeHtml(project.title);
+  return `<article class="project-card">
+  <div class="project-preview" style="--preview-bg: ${escapeHtml(project.color)}">
+    ${project.image ? `<img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.imageAlt)}" width="1200" height="800" loading="lazy" decoding="async">` : ""}
+    <div class="project-fallback"${project.image ? " hidden" : ""}>${title}<small>Conheça o projeto no site publicado.</small></div>
+  </div>
+  <div class="project-info">
+    <p class="project-category">${escapeHtml(project.category)}</p>
+    <h3 class="project-title">${title}</h3>
+    <p class="project-description">${escapeHtml(project.description)}</p>
+    <div class="project-actions">
+      <a class="button button-secondary" href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer" aria-label="Visitar site: ${title} (nova aba)">Visitar site <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="${escapeHtml(createWhatsAppUrl(message))}" target="_blank" rel="noopener noreferrer" aria-label="Solicitar algo parecido com ${title} pelo WhatsApp">Solicitar algo parecido</a>
+    </div>
+  </div>
+</article>`;
+}).join("\n");
 
-const saveTheme = (theme) => {
-  try {
-    localStorage.setItem(themeConfig.storageKey, theme);
-  } catch (error) {
-    return false;
-  }
-
-  return true;
-};
-
-const applyTheme = (theme) => {
-  const selectedTheme = theme === "light" ? "light" : "dark";
-  const themeData = themeConfig.labels[selectedTheme];
-  const themeMeta = document.querySelector("#theme-color-meta") || document.querySelector('meta[name="theme-color"]');
-
-  document.documentElement.dataset.theme = selectedTheme;
-  document.documentElement.style.colorScheme = selectedTheme;
-
-  if (themeMeta) {
-    themeMeta.setAttribute("content", themeConfig.colors[selectedTheme]);
-  }
-
-  document.querySelectorAll(".theme-toggle").forEach((button) => {
-    button.setAttribute("aria-pressed", (selectedTheme === "dark").toString());
-    button.setAttribute("aria-label", themeData.aria);
-    button.title = themeData.aria;
-
-    button.querySelector(".theme-toggle-icon").textContent = themeData.icon;
-    button.querySelector(".theme-toggle-label").textContent = themeData.text;
+const setupProjects = () => {
+  const grid = document.querySelector("#projects-grid");
+  grid.innerHTML = renderProjectsMarkup();
+  grid.querySelectorAll("img").forEach((img) => {
+    const showFallback = () => { img.hidden = true; img.nextElementSibling.hidden = false; };
+    img.addEventListener("error", showFallback);
+    if (img.complete && !img.naturalWidth) showFallback();
   });
 };
 
 const setupTheme = () => {
-  const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-
-  applyTheme(getSavedTheme() || getSystemTheme());
-
-  document.querySelectorAll(".theme-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-      const currentTheme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
-      const nextTheme = currentTheme === "dark" ? "light" : "dark";
-
-      saveTheme(nextTheme);
-      applyTheme(nextTheme);
-    });
-  });
-
-  const syncWithSystem = (event) => {
-    if (!getSavedTheme()) {
-      applyTheme(event.matches ? "light" : "dark");
-    }
+  const button = document.querySelector(".theme-toggle");
+  const preference = matchMedia("(prefers-color-scheme: dark)");
+  let manualTheme = null;
+  try {
+    const saved = localStorage.getItem("fg-theme");
+    if (saved === "light" || saved === "dark") manualTheme = saved;
+  } catch { /* O tema funciona quando o armazenamento é bloqueado. */ }
+  const apply = () => {
+    const theme = manualTheme || (preference.matches ? "dark" : "light");
+    document.documentElement.dataset.theme = theme;
+    document.querySelector("#theme-color-meta").content = theme === "dark" ? "#101014" : "#F7F1E8";
+    button.setAttribute("aria-pressed", String(theme === "dark"));
+    button.title = theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro";
   };
-
-  if (typeof mediaQuery.addEventListener === "function") {
-    mediaQuery.addEventListener("change", syncWithSystem);
-  } else if (typeof mediaQuery.addListener === "function") {
-    mediaQuery.addListener(syncWithSystem);
-  }
-};
-
-const renderProjects = () => {
-  const projectsGrid = document.querySelector("#projects-grid");
-
-  if (!projectsGrid) return;
-
-  projectsGrid.innerHTML = projects.map((project) => {
-    const message = `Olá, Filipe! Vi o projeto ${project.title} no seu portfólio e gostaria de solicitar algo parecido.`;
-
-    return `
-      <article class="case-study reveal" style="--case-color: ${project.color};">
-        <div class="case-visual" aria-hidden="true">
-          <span class="case-label">Case study / ${project.number}</span>
-          <div class="case-dots">${"<i></i>".repeat(9)}</div>
-          <span class="case-shape case-shape-main">${project.symbol}</span>
-          <span class="case-shape case-shape-small"></span>
-          <span class="case-shape case-shape-line"></span>
-        </div>
-        <div class="case-info">
-          <div class="case-meta">
-            <span>${project.category}</span>
-            <span>Projeto ${project.number}</span>
-          </div>
-          <h3>${project.title}</h3>
-          ${project.subtitle ? `<p class="case-subtitle">${project.subtitle}</p>` : ""}
-          <p class="case-description">${project.description}</p>
-          <div class="case-objective">
-            <strong>Objetivo do projeto</strong>
-            <p>${project.objective}</p>
-          </div>
-          <div class="case-actions">
-            <a class="button case-secondary" href="${project.url}" target="_blank" rel="noopener noreferrer" aria-label="Ver site ${project.title}">
-              Ver site <span aria-hidden="true">↗</span>
-            </a>
-            <a class="button case-primary" href="${createWhatsAppUrl(message)}" target="_blank" rel="noopener noreferrer">
-              Quero algo parecido
-            </a>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join("");
-};
-
-const setupWhatsAppLinks = () => {
-  document.querySelectorAll("[data-whatsapp-message]").forEach((element) => {
-    const message = element.dataset.whatsappMessage;
-
-    if (element.tagName === "BUTTON") {
-      element.addEventListener("click", () => {
-        window.open(createWhatsAppUrl(message), "_blank", "noopener,noreferrer");
-      });
-    } else {
-      element.setAttribute("href", createWhatsAppUrl(message));
+  button.addEventListener("click", () => {
+    manualTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem("fg-theme", manualTheme); } catch { /* Preserva a escolha nesta visita. */ }
+    apply();
+  });
+  preference.addEventListener("change", apply);
+  window.addEventListener("storage", (event) => {
+    if (event.key === "fg-theme" || event.key === null) {
+      manualTheme = event.newValue === "light" || event.newValue === "dark" ? event.newValue : null;
+      apply();
     }
   });
+  apply();
+  button.hidden = false;
 };
 
 const setupMobileMenu = () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".main-nav");
-
-  if (!menuToggle || !navigation) return;
-
-  const closeMenu = () => {
-    navigation.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Abrir menu de navegação");
-    document.body.classList.remove("nav-open");
-  };
-
-  const openMenu = () => {
-    navigation.classList.add("open");
-    menuToggle.setAttribute("aria-expanded", "true");
-    menuToggle.setAttribute("aria-label", "Fechar menu de navegação");
-    document.body.classList.add("nav-open");
-  };
-
-  menuToggle.addEventListener("click", () => {
-    menuToggle.getAttribute("aria-expanded") === "true" ? closeMenu() : openMenu();
-  });
-
-  navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
-  });
-
-  document.addEventListener("click", (event) => {
-    if (
-      navigation.classList.contains("open") &&
-      !navigation.contains(event.target) &&
-      !menuToggle.contains(event.target)
-    ) {
-      closeMenu();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 980) closeMenu();
-  });
-};
-
-const setupSmoothScroll = () => {
-  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const target = document.querySelector(link.getAttribute("href"));
-      if (!target) return;
-
-      event.preventDefault();
-      target.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-        block: "start"
-      });
-    });
-  });
-};
-
-const setupHeaderEffect = () => {
   const header = document.querySelector(".site-header");
-  if (!header) return;
-
-  const updateHeader = () => header.classList.toggle("scrolled", window.scrollY > 20);
-  updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
-};
-
-const setupFaq = () => {
-  const questions = document.querySelectorAll(".faq-question");
-
-  questions.forEach((question, index) => {
-    const item = question.closest(".faq-item");
-    const answer = item.querySelector(".faq-answer");
-    const answerId = `faq-answer-${index + 1}`;
-
-    answer.id = answerId;
-    question.setAttribute("aria-controls", answerId);
-
-    question.addEventListener("click", () => {
-      const wasOpen = question.getAttribute("aria-expanded") === "true";
-
-      questions.forEach((otherQuestion) => {
-        otherQuestion.setAttribute("aria-expanded", "false");
-        otherQuestion.closest(".faq-item").classList.remove("open");
-      });
-
-      if (!wasOpen) {
-        question.setAttribute("aria-expanded", "true");
-        item.classList.add("open");
-      }
-    });
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".main-nav");
+  const desktop = matchMedia("(min-width: 980px)");
+  const close = (restoreFocus = false) => {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Abrir menu");
+    if (restoreFocus) toggle.focus();
+  };
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") !== "true";
+    nav.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
   });
+  nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+    close();
+    document.querySelector(link.hash)?.focus({ preventScroll: true });
+  }));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && nav.classList.contains("open")) close(true);
+  });
+  document.addEventListener("click", (event) => { if (!header.contains(event.target)) close(); });
+  header.addEventListener("focusout", (event) => { if (!header.contains(event.relatedTarget)) close(); });
+  desktop.addEventListener("change", () => close(!desktop.matches && nav.contains(document.activeElement)));
+  toggle.hidden = false;
+  header.classList.add("menu-ready");
 };
 
 const setupQuoteForm = () => {
   const form = document.querySelector("#quote-form");
-  if (!form) return;
-
-  const fields = {
-    name: form.querySelector("#name"),
-    projectType: form.querySelector("#project-type"),
-    description: form.querySelector("#description")
+  const status = form.querySelector(".form-status");
+  const fields = [form.querySelector("#name"), form.querySelector("#project-type"), form.querySelector("#description")];
+  const validate = (field) => {
+    const minimum = field.id === "name" ? 2 : field.id === "description" ? 10 : 1;
+    const error = field.value.trim().length < minimum
+      ? (field.id === "name" ? "Informe seu nome com pelo menos 2 caracteres." : field.id === "description" ? "Descreva sua ideia com pelo menos 10 caracteres." : "Selecione o tipo de projeto.")
+      : "";
+    field.setAttribute("aria-invalid", String(Boolean(error)));
+    document.getElementById(field.getAttribute("aria-describedby")).textContent = error;
+    return !error;
   };
-
-  const showError = (field, message) => {
-    const group = field.closest(".form-group");
-    group.classList.toggle("has-error", Boolean(message));
-    field.setAttribute("aria-invalid", Boolean(message).toString());
-    group.querySelector(".field-error").textContent = message;
-  };
-
-  const validateForm = () => {
-    let isValid = true;
-
-    if (fields.name.value.trim().length < 2) {
-      showError(fields.name, "Informe seu nome com pelo menos 2 caracteres.");
-      isValid = false;
-    } else {
-      showError(fields.name, "");
-    }
-
-    if (!fields.projectType.value) {
-      showError(fields.projectType, "Selecione o tipo de projeto.");
-      isValid = false;
-    } else {
-      showError(fields.projectType, "");
-    }
-
-    if (fields.description.value.trim().length < 10) {
-      showError(fields.description, "Descreva sua ideia com pelo menos 10 caracteres.");
-      isValid = false;
-    } else {
-      showError(fields.description, "");
-    }
-
-    return isValid;
-  };
-
-  Object.values(fields).forEach((field) => {
-    ["input", "change"].forEach((eventName) => {
-      field.addEventListener(eventName, () => {
-        if (field.getAttribute("aria-invalid") === "true") validateForm();
-      });
-    });
-  });
-
+  fields.forEach((field) => field.addEventListener("input", () => {
+    status.textContent = "";
+    if (field.getAttribute("aria-invalid") === "true") validate(field);
+  }));
+  // Uma única navegação na mesma aba evita pop-ups bloqueados e abas duplicadas.
+  let navigating = false;
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    if (!validateForm()) {
-      form.querySelector('[aria-invalid="true"]')?.focus();
+    if (navigating) return;
+    const valid = fields.map(validate).every(Boolean);
+    if (!valid) {
+      status.textContent = "Confira os campos indicados para continuar.";
+      fields.find((field) => field.getAttribute("aria-invalid") === "true").focus();
       return;
     }
-
-    const message = [
-      "Olá, Filipe! Quero solicitar um orçamento.",
-      "",
-      `Nome: ${fields.name.value.trim()}`,
-      `Tipo de projeto: ${fields.projectType.value}`,
-      `Descrição: ${fields.description.value.trim()}`
-    ].join("\n");
-
-    window.open(createWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+    const message = ["Olá, Filipe! Quero solicitar um orçamento.", "", `Nome: ${fields[0].value.trim()}`, `Tipo de projeto: ${fields[1].value}`, `Descrição: ${fields[2].value.trim()}`].join("\n");
+    navigating = true;
+    status.textContent = "Abrindo sua mensagem no WhatsApp…";
+    window.location.assign(createWhatsAppUrl(message));
+    window.setTimeout(() => { navigating = false; }, 1500);
   });
-};
-
-const setupRevealAnimations = () => {
-  const elements = document.querySelectorAll(".reveal");
-
-  if (
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-    !("IntersectionObserver" in window)
-  ) {
-    elements.forEach((element) => element.classList.add("revealed"));
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries, currentObserver) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("revealed");
-        currentObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: "0px 0px -40px"
-  });
-
-  elements.forEach((element) => observer.observe(element));
-};
-
-const setupExternalDataLinks = () => {
-  document.querySelectorAll('a[href*="linkedin.com"]').forEach((link) => {
-    link.href = portfolioData.linkedin;
-  });
-  document.querySelectorAll('a[href*="github.com"]').forEach((link) => {
-    link.href = portfolioData.github;
-  });
-  document.querySelectorAll('a[href*="instagram.com"]').forEach((link) => {
-    link.href = portfolioData.instagram;
-  });
+  window.addEventListener("pageshow", () => { navigating = false; status.textContent = ""; });
+  const briefing = document.querySelector("#orcamento");
+  briefing.hidden = false;
+  const openLinkedBriefing = () => { if (location.hash === "#orcamento") briefing.open = true; };
+  openLinkedBriefing();
+  window.addEventListener("hashchange", openLinkedBriefing);
 };
 
 const initializePortfolio = () => {
   setupTheme();
-  renderProjects();
-  setupExternalDataLinks();
-  setupWhatsAppLinks();
   setupMobileMenu();
-  setupSmoothScroll();
-  setupHeaderEffect();
-  setupFaq();
+  setupProjects();
   setupQuoteForm();
-  setupRevealAnimations();
+  document.querySelectorAll("[data-whatsapp-message]").forEach((link) => { link.href = createWhatsAppUrl(link.dataset.whatsappMessage); });
 };
-
-document.addEventListener("DOMContentLoaded", initializePortfolio);
+if (typeof document !== "undefined") initializePortfolio();
+// Exportação para manutenção opcional do HTML estático, sem dependências.
+if (typeof module !== "undefined" && module.exports) module.exports = { projects, renderProjectsMarkup };

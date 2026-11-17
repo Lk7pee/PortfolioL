@@ -1,0 +1,102 @@
+{
+  "browser": "157.0.8103.79",
+  "layouts": [
+    {
+      "width": 320,
+      "scroll": 320,
+      "viewport": 320,
+      "columns": 1
+    },
+    {
+      "width": 360,
+      "scroll": 360,
+      "viewport": 360,
+      "columns": 1
+    },
+    {
+      "width": 375,
+      "scroll": 375,
+      "viewport": 375,
+      "columns": 1
+    },
+    {
+      "width": 390,
+      "scroll": 390,
+      "viewport": 390,
+      "columns": 1
+    },
+    {
+      "width": 414,
+      "scroll": 414,
+      "viewport": 414,
+      "columns": 1
+    },
+    {
+      "width": 768,
+      "scroll": 768,
+      "viewport": 768,
+      "columns": 2
+    },
+    {
+      "width": 1024,
+      "scroll": 1024,
+      "viewport": 1024,
+      "columns": 2
+    },
+    {
+      "width": 1280,
+      "scroll": 1280,
+      "viewport": 1280,
+      "columns": 2
+    },
+    {
+      "width": 1440,
+      "scroll": 1440,
+      "viewport": 1440,
+      "columns": 2
+    }
+  ],
+  "accessibility": [
+    {
+      "theme": "light",
+      "width": 390,
+      "violations": [],
+      "passes": 30
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "violations": [],
+      "passes": 30
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "violations": [],
+      "passes": 30
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "violations": [],
+      "passes": 30
+    }
+  ],
+  "checks": [
+    "Estrutura, quatro URLs, âncoras e segurança dos links",
+    "Nove larguras, briefing aberto, colunas e alvos de pelo menos 44 px",
+    "Menu por teclado, Escape, foco, fechamento por âncora e mudança de breakpoint",
+    "Tema automático, mudança do sistema e persistência da escolha manual",
+    "Validação acessível, conteúdo preservado e mensagem WhatsApp exata em uma única navegação interceptada",
+    "FAQ por Enter/Espaço e preferência de movimento reduzido",
+    "Refluxo equivalente a zoom 200% e orientação horizontal 844 × 390",
+    "axe WCAG A/AA: mobile e desktop nos dois temas, formulário com erros e FAQ aberta",
+    "Quatro imagens carregadas, proporção 1200 × 800 e capturas finais",
+    "Nenhum erro de JavaScript ou de console durante a navegação",
+    "Sem JavaScript: quatro projetos, navegação, FAQ e contato direto preservados",
+    "Armazenamento bloqueado: tema manual mantido durante a visita",
+    "Falha de imagens: apresentação alternativa e links preservados"
+  ],
+  "errors": [],
+  "passed": true
+}
